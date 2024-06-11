@@ -7,14 +7,14 @@
       src="https://kit.fontawesome.com/83572a4276.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="style_2.css" />
-    <title>Login and Signup</title>
+    <link rel="stylesheet" href="adminLog.css" />
+    <title>Admin Page</title>
   </head>
   <body>
     <div class="container">
       <div class="form-box">
-        <h1 id="title">Sign Up</h1>
-        <form id="userForm" method="POST">
+        <h1 id="title">Admin</h1>
+        <form id="userForm" method="POST" action="../Php/admin.php">
           <div class="input-group">
             <div class="input-field" id="nameField">
               <i class="fa-solid fa-user"></i>
@@ -24,21 +24,13 @@
               <i class="fa-solid fa-lock"></i>
               <input type="password" name="pwd" placeholder="Password" />
             </div>
-            <div class="input-field">
-              <i class="fa-solid fa-envelope"></i>
-              <input type="email" name="email" placeholder="Email" />
-            </div>
           </div>
           <div class="btn-field">
-            <button type="button" id="signUpBtn">Sign Up</button>
-            <button type="button" class="disable" id="signInBtn">
-              Sign In
-            </button>
+            <button type="button" id="adminBtn">Sign In</button>
           </div>
-          <button type="button" class="admin">Admin</button>
         </form>
       </div>
     </div>
-    <script src="script_2.js"></script>
+    <!-- <script src="adminLog.js"></script> -->
   </body>
 </html>

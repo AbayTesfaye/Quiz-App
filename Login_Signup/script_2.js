@@ -3,6 +3,7 @@ const signInBtn = document.getElementById("signInBtn");
 const title = document.getElementById("title");
 const nameField = document.getElementById("nameField");
 const userForm = document.getElementById("userForm");
+const adminBtn = document.querySelector(".admin");
 
 let signUpClickedOnce = false;
 let signInClickedOnce = false;
@@ -41,3 +42,8 @@ signUpBtn.addEventListener("click", function () {
 function clearInputFields() {
   document.querySelectorAll("input").forEach((input) => (input.value = ""));
 }
+
+adminBtn.addEventListener("click", function () {
+  userForm.action = "../Admin/adminLog.html";
+  userForm.submit();
+});
