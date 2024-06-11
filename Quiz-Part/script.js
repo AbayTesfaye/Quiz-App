@@ -54,7 +54,7 @@ const questions = [
       },
       {
         text: "Sahara",
-        correct: false,
+        correct: true,
       },
       {
         text: "Antarctica",
