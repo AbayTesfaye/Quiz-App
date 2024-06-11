@@ -68,3 +68,15 @@ body {
 .incorrect {
   background: #ff9393;
 }
+.time-field {
+  width: 100px;
+  display: flex;
+  float: right;
+  top: 0;
+  right: 0;
+  font-weight: bold;
+  color: #001e4d;
+}
+.time-left {
+  margin-right: 5px;
+}

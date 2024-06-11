@@ -11,13 +11,19 @@
       <div class="box">
         <h1 id="title">Welcome to Admin page</h1>
         <div class="btn-field">
-          <button type="button" id="viewQue">View Questions</button>
-          <button type="button" id="addQue">Add Questions</button>
-          <button type="button" id="deleteQue">Delete Questions</button>
+          <form method="POST" action="../Php/adminAction.php">
+            <button type="submit" name="action" value="view">
+              View Questions
+            </button>
+            <button type="submit" name="action" value="add">
+              Add Questions
+            </button>
+            <button type="submit" name="action" value="delete">
+              Delete Questions
+            </button>
+          </form>
         </div>
       </div>
-      <div id="content"></div>
     </div>
-    <script src="adminAction.js"></script>
   </body>
 </html>
