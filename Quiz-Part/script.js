@@ -167,4 +167,17 @@ nextButton.addEventListener("click", () => {
     startQuiz();
   }
 });
+const timeSeconds = document.querySelector(".time-seconds");
+let second = 20;
+
+timeSeconds.innerHTML = second;
+
+const countDown = setInterval(() => {
+  second--;
+  timeSeconds.innerHTML = second;
+  if (second <= 0 || second < 1) {
+    clearInterval(countDown);
+    showScore();
+  }
+}, 1000);
 startQuiz();
