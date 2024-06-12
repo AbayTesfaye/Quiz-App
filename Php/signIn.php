@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
          } 
          else {
    // Redirect to the Quiz-Part page
-           header("Location: ../Quiz-Part/index.html");
+           header("Location: ../Quiz-Part/index.php");
            $pdo = null;
             $stmt = null;
             exit();

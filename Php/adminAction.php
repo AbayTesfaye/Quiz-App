@@ -1,11 +1,12 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $action = $_POST['action'];
-
+   
     switch ($action) {
         case 'view':
             // Code to view questions
             echo "View Questions button clicked";
+           script 
             break;
         case 'add':
             // Code to add questions
