@@ -1,88 +1,17 @@
 <?php
-// if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-//     $action = $_POST['action'];
-
-//     require_once "../Quiz-Part/index.php";
-   
-//     switch ($action) {
-//         case 'view':
-            
-//             // Output questions and answers in a formatted way
-//             foreach ($questions as $index => $question) {
-//                 echo "Question " . ($index + 1) . ": " . $question['question'] . "<br>";
-//                 foreach ($question['answers'] as $answer) {
-//                     echo " - " . $answer['text'] . "<br>";
-//                 }
-//             }
-//             break;
-//         case 'add':
-         
-//             echo json_encode($questions);
-//             break;
-//         case 'delete':
-
-//             echo json_encode($questions);
-//             break;
-//         default:
-//             echo "Unknown action";
-//     }
-// } else {
-//     echo "No action received";
-// }
-?>  
-<?php
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $action = $_POST['action'];
-
-    // Include the quiz questions
-    require_once "../Quiz-Part/index.php";
-   
-    switch ($action) {
-        case 'view':
-            // Output questions and answers in a formatted way
-            echo "<div class='questions'>";
-            foreach ($questions as $index => $question) {
-                echo "<p><strong>Question " . ($index + 1) . ": </strong>" . $question['question'] . "</p>";
-                echo "<ul>";
-                foreach ($question['answers'] as $answer) {
-                    echo "<li>" . $answer['text'] . "</li>";
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                if ($_POST['action'] == 'add') {
+                    // Redirect to add question page
+                    header("Location: ../Admin/addQue.php");
+                    exit;
+                } elseif ($_POST['action'] == 'view') {
+                    // Redirect to view question page
+                    header("Location: ../Admin/viewQue.php");
+                    exit;
+                } elseif ($_POST['action'] == 'delete') {
+                    // Redirect to delete question page
+                    header("Location: ../Admin/deleteQue.php");
+                    exit;
                 }
-                echo "</ul>";
             }
-            echo "</div>";
-            break;
-        case 'add':
-            // Display a form to add a new question
-            echo "<form method='post' action='addQuestion.php'>";
-            echo "<label for='new-question'>New Question:</label><br>";
-            echo "<input type='text' id='new-question' name='new-question'><br>";
-            echo "<label for='answer-1'>Answer 1:</label><br>";
-            echo "<input type='text' id='answer-1' name='answer-1'><br>";
-            echo "<label for='answer-2'>Answer 2:</label><br>";
-            echo "<input type='text' id='answer-2' name='answer-2'><br>";
-            echo "<label for='answer-3'>Answer 3:</label><br>";
-            echo "<input type='text' id='answer-3' name='answer-3'><br>";
-            echo "<label for='answer-4'>Answer 4:</label><br>";
-            echo "<input type='text' id='answer-4' name='answer-4'><br>";
-            echo "<input type='submit' value='Submit'>";
-            echo "</form>";
-            break;
-        case 'delete':
-            // Display a form to delete a question
-            echo "<form method='post' action='deleteQuestion.php'>";
-            echo "<label for='question-number'>Select question number to delete:</label><br>";
-            echo "<select id='question-number' name='question-number'>";
-            foreach ($questions as $index => $question) {
-                echo "<option value='" . $index . "'>Question " . ($index + 1) . "</option>";
-            }
-            echo "</select><br>";
-            echo "<input type='submit' value='Delete'>";
-            echo "</form>";
-            break;
-        default:
-            echo "Unknown action";
-    }
-} else {
-    echo "No action received";
-}
-?>
+            ?>
