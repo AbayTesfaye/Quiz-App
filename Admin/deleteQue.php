@@ -12,11 +12,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Remove the question from the array
         unset($questions[$questionIndex]);
 
-        // Save the updated questions array to a JSON file
-        file_put_contents('questions.php', '<?php $questions = ' . var_export($questions, true) . ';');
+        // Save the updated questions array to a PHP file
+        file_put_contents('../Quiz-Part/questions.php', '<?php $questions = ' . var_export($questions, true) . ';');
         
         // Redirect back to the admin page
-        header("Location: adminAction.html");
+        header("Location: adminAction.php");
         exit;
     } else {
         echo "Invalid question index.";
